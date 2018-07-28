@@ -1,7 +1,12 @@
+import requests
+import json
+
 from rest_framework import generics
 
 from .models import UserVideo
 from .serializers import UserVideoSerializer
+
+YOUTUBE_KEY = 'AIzaSyBIpcZ0mcSonw0RLAqRw_GTWiFNiWK2fEQ'
 
 class UserVideoList(generics.ListCreateAPIView):
 

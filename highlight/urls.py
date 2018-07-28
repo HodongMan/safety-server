@@ -17,5 +17,5 @@ urlpatterns = [
     path("interaction", VideoInteractionList.as_view(), name = VideoInteractionList.name),
     path("interaction/<int:pk>/", VideoInteractionDetail.as_view(), name = VideoInteractionDetail.name),
     path("test/", ResponseHighlightTestDataList, name = 'response-test-list'),
-    path("set/<int:pk>/", ResponseHighlightSet.as_view(), name = ResponseHighlightSet.name),
+    path("set/<str:video>/", ResponseHighlightSet.as_view(), name = ResponseHighlightSet.name),
 ]

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'highlight.apps.HighlightConfig',
     'uservideo.apps.UservideoConfig',
+    'commenthighlight.apps.CommenthighlightConfig',
 ]
 
 MIDDLEWARE = [
