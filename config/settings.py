@@ -38,9 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'joinfield',
     'highlight.apps.HighlightConfig',
     'uservideo.apps.UservideoConfig',
     'commenthighlight.apps.CommenthighlightConfig',
+
 ]
 
 MIDDLEWARE = [

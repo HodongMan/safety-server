@@ -4,7 +4,7 @@ import json
 from rest_framework import generics
 
 from .models import UserVideo, Video
-from .serializers import UserVideoSerializer, VideoSerializer
+from .serializers import UserVideoSerializer, VideoSerializer, UserVideoJoinSerializer
 
 YOUTUBE_KEY = 'AIzaSyBIpcZ0mcSonw0RLAqRw_GTWiFNiWK2fEQ'
 
@@ -14,15 +14,15 @@ class UserVideoList(generics.ListCreateAPIView):
     serializer_class = UserVideoSerializer
     name = 'user-video-list'
 
-    def get_object(self, pk):
+class UserVideoJoinList(generics.ListAPIView):
 
-        video_info = Video.objects.get(video_id=self.kwargs['video_id'])
-        print(video_id=self.kwargs['video_id'])
-        return UserVideo.objects.get(pk=pk)
-    
-    def pre_save(self, obj):
-        print('HAHAHAHAHAHAHA')
+    queryset = UserVideo.objects.all()
+    serializer_class = UserVideoJoinSerializer
+    name = 'user-video-join-list'
 
+    def get_queryset(self):
+
+        return UserVideo.objects.raw('select * from uservideo left join video on uservideo.video_id = video.video_id')
 
 class UserVideoDetail(generics.RetrieveUpdateDestroyAPIView):
 

@@ -40,7 +40,6 @@ class getCommentParsingResult(generics.ListAPIView):
             display_text = item['snippet']['topLevelComment']['snippet']['textDisplay']
             text_index = display_text.find('</a>')
             
-
             if 0 < text_index:
                 for match in re.finditer('([0-5]?[0-9]):([0-5]?[0-9])', display_text, re.S):
                     time_result.add(match.group(0))
