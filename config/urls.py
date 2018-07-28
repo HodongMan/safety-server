@@ -7,5 +7,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/highlight/', include('highlight.urls')),
     path('api/user/', include('uservideo.urls')),
-    path('api/comment/highlight', include('commenthighlight.urls')),
+    path('api/comment/highlight/', include('commenthighlight.urls')),
 ]
