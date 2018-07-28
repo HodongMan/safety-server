@@ -12,4 +12,16 @@ class UserVideo(ModelBase):
 
     class Meta:
         db_table = 'UserVideo'
-        ordering = ('favorite', '-created',)   
+        ordering = ('favorite', '-created',)
+
+class Video(ModelBase):
+
+    video_id = models.CharField(max_length=255)
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    thumbnails = models.URLField(max_length=255, blank=True)
+    publishedAt = models.DateTimeField()
+
+    class Meta:
+        db_table = 'Video'
+        ordering = ('-created',)
