@@ -5,5 +5,6 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/highlight/', include('highlight.urls'))
+    path('api/highlight/', include('highlight.urls')),
+    path('api/user/', include('uservideo.urls')),
 ]
